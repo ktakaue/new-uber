@@ -1,24 +1,12 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ 
+[内容]
+UberEats のように、下記処理を SPA で実装致しました。
+1レストラン一覧ベージ表示
+2個別レストランページ表示
+3商品選択とそれに伴う金額の計算処理
+4注文確認ページの表示
+5注文後の注文ページの初期化
+*参考書籍及びサイト
+・りあクト! TypeSript で始めるつらくない React 開発 第 3.1 版(くるみ割り書房) 
+・Techpit 内教材:Rails と React で UberEats 風 SPA アプリケーションをつくってみよう! (タガミショウゴ)
