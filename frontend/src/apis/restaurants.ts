@@ -1,12 +1,13 @@
 import axios from "axios";
 import { restaurantsIndex } from "../urls/index";
-import { ErrorResponse } from "./interfaces-api"
+// import { ErrorResponse } from "./interfaces-api"
 
-export const fetchRestaurants = () => {
-  return axios
-    .get(restaurantsIndex)
-    .then((res) => {
-      return res.data;
-    })
-    .catch((e: ErrorResponse) => console.error(e));
+export const fetchRestaurants = async () => {
+  try {
+    const res = await axios
+      .get(restaurantsIndex);
+    return res.data;
+  } catch (e) {
+    return console.error(e);
+  }
 };
