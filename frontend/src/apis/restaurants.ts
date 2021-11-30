@@ -1,5 +1,6 @@
 import axios from "axios";
 import { restaurantsIndex } from "../urls/index";
+import { ErrorResponse } from "./interfaces-api"
 
 export const fetchRestaurants = () => {
   return axios
@@ -7,5 +8,5 @@ export const fetchRestaurants = () => {
     .then((res) => {
       return res.data;
     })
-    .catch((e) => console.error(e));
+    .catch((e: ErrorResponse) => console.error(e));
 };

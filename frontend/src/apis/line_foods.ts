@@ -1,7 +1,8 @@
 import axios from "axios";
 import { lineFoods, lineFoodsReplace } from "../urls/index";
+import {ErrorResponse } from "./interfaces-api"
 
-export const postLineFoods = (params) => {
+export const postLineFoods = (params: { foodId: number; count: number; }) => {
   return axios
     .post(lineFoods, {
       food_id: params.foodId,
@@ -10,12 +11,12 @@ export const postLineFoods = (params) => {
     .then((res) => {
       return res.data;
     })
-    .catch((e) => {
+    .catch((e: ErrorResponse) => {
       throw e;
     });
 };
 
-export const replaceLineFoods = (params) => {
+export const replaceLineFoods = (params: { foodId: number; count: number; }) => {
   return axios
     .put(lineFoodsReplace, {
       food_id: params.foodId,
@@ -24,7 +25,7 @@ export const replaceLineFoods = (params) => {
     .then((res) => {
       return res.data;
     })
-    .catch((e) => {
+    .catch((e: ErrorResponse) => {
       throw e;
     });
 };
@@ -35,7 +36,7 @@ export const fetchLineFoods = () => {
     .then((res) => {
       return res.data;
     })
-    .catch((e) => {
+    .catch((e: ErrorResponse) => {
       throw e;
     });
 };

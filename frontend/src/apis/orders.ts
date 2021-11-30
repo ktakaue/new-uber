@@ -1,7 +1,8 @@
 import axios from "axios";
 import { orders } from "../urls/index";
+import { ErrorResponse } from "./interfaces-api"
 
-export const postOrder = (params) => {
+export const postOrder = (params: { line_food_ids: number; }) => {
   return axios
     .post(orders, {
       line_food_ids: params.line_food_ids,
@@ -9,5 +10,5 @@ export const postOrder = (params) => {
     .then((res) => {
       return res.data;
     })
-    .catch((e) => console.error(e));
+    .catch((e: ErrorResponse) => console.error(e));
 };
