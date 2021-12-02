@@ -5,6 +5,12 @@ export const initialState = {
   foodsList: [],
 };
 
+
+// interface Fetch {
+//   type: any;
+//   FETCHING: any,
+//   FETCH_SUCCESS: any,
+// }
 export const foodsActionTyps = {
   FETCHING: "FETCHING",
   FETCH_SUCCESS: "FETCH_SUCCESS",

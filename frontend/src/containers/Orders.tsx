@@ -48,11 +48,11 @@ const OrderItemWrapper = styled.div`
 `;
 // --- ここまで追加 ---
 
-export const Orders = () => {
+export const Orders= () => {
   const [state, dispatch] = useReducer(lineFoodsReducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: lineFoodsActionTyps.FETCHING });
+    dispatch({ type: lineFoodsActionTyps.FETCHING, payload: {lineFoodsSummary: null}, });
     fetchLineFoods().then((data) =>
       dispatch({
         type: lineFoodsActionTyps.FETCH_SUCCESS,
@@ -64,11 +64,11 @@ export const Orders = () => {
   }, []);
 
   const postLineFoods = () => {
-    dispatch({ type: lineFoodsActionTyps.POSTING });
+    dispatch({ type: lineFoodsActionTyps.POSTING, payload: {lineFoodsSummary: null}, });
     postOrder({
       line_food_ids: state.lineFoodsSummary.line_food_ids,
     }).then(() => {
-      dispatch({ type: lineFoodsActionTyps.POST_SUCCESS });
+      dispatch({ type: lineFoodsActionTyps.POST_SUCCESS, payload: {lineFoodsSummary: null}, });
     });
     window.location.reload();
   };

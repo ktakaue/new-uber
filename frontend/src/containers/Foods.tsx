@@ -70,7 +70,7 @@ const submitOrder = () => {
 };
 
 interface match {
-  match: string;
+  match: any;
 }
 
 export const Foods:React.FC<match> = ({ match }) => {
@@ -128,7 +128,7 @@ const initialState: Props = {
   };
 
   useEffect(() => {
-    dispatch({ type: foodsActionTyps.FETCHING });
+    dispatch({ type: foodsActionTyps.FETCHING, payload: {foods: null}, });
     fetchFoods(match.params.restaurantsId).then((data) => {
       dispatch({
         type: foodsActionTyps.FETCH_SUCCESS,

@@ -81,7 +81,7 @@ export const Restaurants = () => {
   const [state, dispatch] = useReducer(restaurantsReducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: restaurantsActionTyps.FETCHING });
+    dispatch({ type: restaurantsActionTyps.FETCHING, payload: {restaurants: null}, });
     fetchRestaurants()
     .then((data) =>
       dispatch({
