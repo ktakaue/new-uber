@@ -69,17 +69,31 @@ const submitOrder = () => {
   console.log("登録ボタンが押された！");
 };
 
-export const Foods = ({ match }) => {
+interface match {
+  match: string;
+}
+
+export const Foods:React.FC<match> = ({ match }) => {
   const history = useHistory();
 
   const [foodsState, dispatch] = useReducer(foodsReducer, foodsInitialState);
 
   // --- ここから追加 ---
-  const initialState = {
-    isOpenOrderDialog: false,
+
+  interface Props {
+    isOpenOrderDialog: boolean;
+    selectedFood: any;
+    selectedFoodCount: number;
+    isOpenNewOrderDialog: boolean;
+    existingRestaurantName: "";
+    newRestaurantName: string;
+}
+
+const initialState: Props = {
+    isOpenOrderDialog: true || false,
     selectedFood: null,
     selectedFoodCount: 1,
-    isOpenNewOrderDialog: false,
+    isOpenNewOrderDialog: true || false,
     existingRestaurantName: "",
     newRestaurantName: "",
   };

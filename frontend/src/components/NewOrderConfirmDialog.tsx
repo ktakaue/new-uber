@@ -12,7 +12,7 @@ interface Props {
   existingRestaurantName: string;
   newRestaurantName: string;
   onClickSubmit: () => void;
-  onClick: () => void;
+  onClick?: () => void;
 }
 export const NewOrderConfirmDialog: React.FC<Props> = ({
   isOpen,
