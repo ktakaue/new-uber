@@ -19,7 +19,18 @@ const AmountText = styled.p`
   font-weight: bold;
 `;
 
-export const OrderDetailItem = ({
+
+interface Props {
+  restaurantId: number,
+  restaurantName: string,
+  restaurantFee: string,
+  foodCount: number,
+  price: number,
+  timeRequired: number,
+}
+
+
+export const OrderDetailItem:React.FC<Props> = ({
   restaurantId,
   restaurantName,
   restaurantFee,

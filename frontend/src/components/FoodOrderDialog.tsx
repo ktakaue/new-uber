@@ -17,6 +17,7 @@ import { OrderButton } from "./Buttons/OrderButton";
 
 // images
 import OrderHeaderImage from "../images/order-header.png";
+import { findDOMNode } from "react-dom";
 
 const OrderHeader = styled.img`
   width: 100%;
@@ -57,14 +58,27 @@ const PriceWrapper = styled.div`
 // --- ここまで追加 ---
 
 // --- ここから修正 ---
-export const FoodOrderDialog = ({
+
+
+interface  Props1 {
+  food: any,
+  countNumber: any,
+  isOpen: any,
+  onClose: () => any,
+  onClickCountUp: () => any,
+  onClickCountDown: () => any,
+  onClickOrder: () => any,
+}
+
+
+export const FoodOrderDialog: React.FC<Props1> = ({
   food,
   countNumber,
   isOpen,
   onClose,
   onClickCountUp,
   onClickCountDown,
-  onClickOrder,
+  onClickOrder
 }) => {
   return (
     <Dialog open={isOpen} onClose={onClose}>
@@ -81,7 +95,7 @@ export const FoodOrderDialog = ({
             <CountDownButton
               onClick={() => onClickCountDown()}
               // 数量が1以下だったら、カウントダウンさせない
-              isDisabled={countNumber <= 1}
+              disabled={countNumber <= 1}
             />
           </CountItem>
           <CountItem>
@@ -91,7 +105,7 @@ export const FoodOrderDialog = ({
             <CountUpButton
               onClick={() => onClickCountUp()}
               // 数量が9以上だったら、カウントアップさせない
-              isDisabled={countNumber >= 9}
+              disabled={countNumber >= 9}
             />
           </CountItem>
         </CountersWrapper>

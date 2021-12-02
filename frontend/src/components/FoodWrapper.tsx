@@ -35,7 +35,14 @@ const FoodImageNode = styled.img`
   width: 250px;
 `;
 
-export const FoodWrapper = ({ food, onClickFoodWrapper, imageUrl }) => (
+
+interface Props {
+  food: any;
+  onClickFoodWrapper: (food: any) => void;
+  imageUrl: string;
+}
+
+export const FoodWrapper: React.FC<Props> = ({ food, onClickFoodWrapper, imageUrl }) => (
   <Wrapper onClick={() => onClickFoodWrapper(food)}>
     <FoodDetail>
       {food.name}

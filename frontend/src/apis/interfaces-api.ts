@@ -2,6 +2,6 @@ export interface restaurantId {
   restaurantId: number;
 }
 
-// export interface ErrorResponse {
-//   error: string;
-// }
+export interface ErrorResponse {
+  error: string;
+}

@@ -5,7 +5,16 @@ import React from "react";
 import { DialogContent, Dialog, DialogTitle } from "@material-ui/core";
 import { OrderButton } from "./Buttons/OrderButton";
 
-export const NewOrderConfirmDialog = ({
+
+interface Props {
+  isOpen: boolean;
+  onClose: (event: Event) => void;
+  existingRestaurantName: string;
+  newRestaurantName: string;
+  onClickSubmit: () => void;
+  onClick: () => void;
+}
+export const NewOrderConfirmDialog: React.FC<Props> = ({
   isOpen,
   onClose,
   existingRestaurantName, // 他店舗の名前

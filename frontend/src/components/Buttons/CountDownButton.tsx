@@ -4,12 +4,14 @@ import React from "react";
 // style
 import { RoundButton } from "../shared_style";
 
-// interface Props  {
-//   onClick: (event: React.MouseEvent<HTMLInputElement>) => void
-// }
+export interface Props  {
+  onClick: () => void;
+  disabled: boolean;
+}
 
-export const CountDownButton  = ({ onClick, isDisabled }) => (
-  <RoundButton onClick={onClick} disabled={isDisabled}>
+
+export const CountDownButton: React.FC<Props>  = ({ onClick, disabled }) => (
+  <RoundButton onClick={onClick} disabled={disabled}>
     ー
   </RoundButton>
 );
