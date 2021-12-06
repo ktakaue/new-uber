@@ -63,7 +63,7 @@ const PriceWrapper = styled.div`
 interface  Props1 {
   food: any,
   countNumber: any,
-  isOpen: any,
+  isOpen: boolean,
   onClose: () => any,
   onClickCountUp: () => any,
   onClickCountDown: () => any,

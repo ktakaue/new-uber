@@ -12,17 +12,18 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/restaurants">
+        <Route exact path="/restaurants">
           <Restaurants />
         </Route>
-        <Route  path="/foods">
-          <foods />
+        <Route exact path="/foods">
+          <Foods />
         </Route>
-        <Route  path="/orders">
+        <Route exact path="/orders">
           <Orders />
         </Route>
         {/* ここから追加 */}
         <Route
+          exact
           path="/restaurants/:restaurantsId/foods"
           render={({ match }) => <Foods match={match} />}
         />
