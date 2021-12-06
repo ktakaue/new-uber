@@ -16,7 +16,7 @@ export const foodsActionTyps = {
   FETCH_SUCCESS: "FETCH_SUCCESS",
 };
 
-export const foodsReducer = (state: any, action: { type: any; payload: { foods: any; }; }) => {
+export const foodsReducer = (state: any, action: { type: string; payload: { foods: string | number | null; }; }) => {
   switch (action.type) {
     case foodsActionTyps.FETCHING:
       return {

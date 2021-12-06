@@ -111,7 +111,7 @@ export const Restaurants = () => {
               <Skeleton variant="rect" width={450} height={300} />
             </Fragment>
           :
-            state.restaurantsList.map((item: { id: any; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; fee: any; time_required: any; }, index: React.Key | null | undefined) =>
+            state.restaurantsList.map((item: { id: number; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; fee: number; time_required: number }, index: React.Key | null | undefined) =>
               <Link to={`/restaurants/${item.id}/foods`} key={index} style={{ textDecoration: 'none' }}>
                 <RestaurantsContentWrapper>
                   <RestaurantsImageNode src={RestaurantImage} />

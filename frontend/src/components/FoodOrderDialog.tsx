@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import {
   DialogContent,
   Dialog,
@@ -62,7 +62,7 @@ const PriceWrapper = styled.div`
 
 interface  Props1 {
   food: any,
-  countNumber: any,
+  countNumber: number,
   isOpen: boolean,
   onClose: () => any,
   onClickCountUp: () => any,

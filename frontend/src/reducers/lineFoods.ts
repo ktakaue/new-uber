@@ -14,7 +14,7 @@ export const lineFoodsActionTyps = {
   POST_SUCCESS: "POST_SUCCESS",
 };
 
-export const lineFoodsReducer = (state: any, action: { type: any; payload: { lineFoodsSummary: any; }; }) => {
+export const lineFoodsReducer = (state: any, action: { type: string; payload: { lineFoodsSummary: string | null; }; }) => {
   switch (action.type) {
     case lineFoodsActionTyps.FETCHING:
       return {

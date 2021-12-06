@@ -186,7 +186,7 @@ const initialState: Props = {
           isOpen={state.isOpenOrderDialog}
           food={state.selectedFood}
           countNumber={state.selectedFoodCount}
-          onClickCountUp={() =>
+          onClickCountUp ={() =>
             setState({
               ...state,
               selectedFoodCount: state.selectedFoodCount + 1,
