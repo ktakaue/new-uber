@@ -5,7 +5,7 @@ import React from "react";
 import { RoundButton } from "../shared_style";
 
 export interface Props  {
-  onClick: () => void;
+  onClick: () =>  React.MouseEventHandler<HTMLButtonElement>;
   disabled: boolean;
 }
 

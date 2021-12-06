@@ -70,7 +70,7 @@ const submitOrder = () => {
 };
 
 interface match {
-  match: any;
+  match?: any;
 }
 
 export const Foods:React.FC<match> = ({ match }) => {
@@ -139,7 +139,7 @@ const initialState: Props = {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+ console.log("debug" + state.selectedFood)
   return (
     <Fragment>
       <HeaderWrapper>
@@ -162,17 +162,18 @@ const initialState: Props = {
             ))}
           </Fragment>
         ) : (
-          foodsState.foodsList.map((food: { id: React.Key; }) => (
+            foodsState.foodsList.map((food: { id: React.Key; }) => (
             <ItemWrapper key={food.id}>
               <FoodWrapper
                 food={food}
                 // フードitemクリック時にsetStateする
-                onClickFoodWrapper={(food: {id: React.Key; }) =>
+                  onClickFoodWrapper={(food: { id: React.Key; }) =>{
+                  console.log("debug2" + food)
                   setState({
                     ...state,
                     selectedFood: food,
                     isOpenOrderDialog: true,
-                  })
+                  })}
                 }
                 imageUrl={FoodImage}
               />
