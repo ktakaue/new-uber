@@ -90,10 +90,10 @@ export const Foods:React.FC<match> = ({ match }) => {
 }
 
 const initialState: Props = {
-    isOpenOrderDialog: true || false,
+    isOpenOrderDialog: false,
     selectedFood: null,
     selectedFoodCount: 1,
-    isOpenNewOrderDialog: true || false,
+    isOpenNewOrderDialog: false,
     existingRestaurantName: "",
     newRestaurantName: "",
   };
@@ -137,6 +137,7 @@ const initialState: Props = {
         },
       });
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
